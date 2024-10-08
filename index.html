@@ -640,31 +640,30 @@
               <h2>Ratings:</h2>
               <div class="center">
                 <fieldset class="rating">
-                  <input type="radio" id="star5" name="rating" value="5"/><label for="star5" class="full"></label>
-                  <input type="radio" id="star4.5" name="rating" value="4.5"/><label for="star4.5" class="half"></label>
-                  <input type="radio" id="star4" name="rating" value="4"/><label for="star4" class="full"></label>
-                  <input type="radio" id="star3.5" name="rating" value="3.5"/><label for="star3.5" class="half"></label>
-                  <input type="radio" id="star3" name="rating" value="3"/><label for="star3" class="full"></label>
-                  <input type="radio" id="star2.5" name="rating" value="2.5"/><label for="star2.5" class="half"></label>
-                  <input type="radio" id="star2" name="rating" value="2"/><label for="star2" class="full"></label>
-                  <input type="radio" id="star1.5" name="rating" value="1.5"/><label for="star1.5" class="half"></label>
-                  <input type="radio" id="star1" name="rating" value="1"/><label for="star1" class="full"></label>
-                  <input type="radio" id="star0.5" name="rating" value="0.5"/><label for="star0.5" class="half"></label>
+                  <input type="radio" id="star5" name="rating" value="5" /><label for="star5" class="full"></label>
+                  <input type="radio" id="star4.5" name="rating" value="4.5" /><label for="star4.5" class="half"></label>
+                  <input type="radio" id="star4" name="rating" value="4" /><label for="star4" class="full"></label>
+                  <input type="radio" id="star3.5" name="rating" value="3.5" /><label for="star3.5" class="half"></label>
+                  <input type="radio" id="star3" name="rating" value="3" /><label for="star3" class="full"></label>
+                  <input type="radio" id="star2.5" name="rating" value="2.5" /><label for="star2.5" class="half"></label>
+                  <input type="radio" id="star2" name="rating" value="2" /><label for="star2" class="full"></label>
+                  <input type="radio" id="star1.5" name="rating" value="1.5" /><label for="star1.5" class="half"></label>
+                  <input type="radio" id="star1" name="rating" value="1" /><label for="star1" class="full"></label>
+                  <input type="radio" id="star0.5" name="rating" value="0.5" /><label for="star0.5" class="half"></label>
                 </fieldset>
                 <span id="rating-value"></span>
               </div>
             </div>
           </div>
           <script>
-            let star = document.querySelectorAll('input');
-let showValue = document.querySelector('#rating-value');
+            let stars = document.querySelectorAll('input[name="rating"]');
+            let showValue = document.querySelector('#rating-value');
 
-for(let i = 0; i < star.length; i++) {
-    star[i].addEventListener('click', function() {
-        let selectedRating = this.value;
-        showValue.innerHTML = selectedRating; // Only show the rating value
-    });
-}
+            stars.forEach(star => {
+              star.addEventListener('click', function () {
+                showValue.textContent = this.value;
+              });
+            });
           </script>
           <label for="review">Your Review:</label>
           <textarea id="review" name="review" rows="4" required></textarea>
@@ -680,191 +679,105 @@ for(let i = 0; i < star.length; i++) {
         </form>
       </div>
 
-<<<<<<< HEAD
       <div class="reviews-list">
-        <h3>What Others Are Saying</h3>
         <!-- Example Review -->
         <div class="review-slideshow">
           <div class="review-slide">
             <h4>John Doe - Paris</h4>
             <p>⭐⭐⭐⭐⭐</p>
             <p>
-=======
-      <div class="reviews-container">
-        <h2 class="reviews-title">What Others Are Saying</h2>
-        <div class="reviews-list">
-          <div class="review-card">
-            <div class="review-header">
-              <img src="https://i.pravatar.cc/100?img=1" alt="John Doe" class="reviewer-avatar">
-              <div class="reviewer-info">
-                <h3 class="reviewer-name">John Doe</h3>
-                <p class="reviewer-location">Paris</p>
-              </div>
-            </div>
-            <div class="review-rating">
-              <span class="star-rating" aria-label="5 out of 5 stars">★★★★★</span>
-            </div>
-            <p class="review-text">
->>>>>>> 39c6b97e18a4e0066067d92d5b1db7d37e893c76
               Amazing experience in Paris! The Eiffel Tower was breathtaking, and
               the food was incredible. Highly recommend!
             </p>
           </div>
-<<<<<<< HEAD
           <div class="review-slide">
             <h4>Rahul Mehta - Dubai</h4>
             <p>⭐⭐⭐⭐</p>
             <p>
-=======
-      
-          <div class="review-card">
-            <div class="review-header">
-              <img src="https://i.pravatar.cc/100?img=2" alt="Rahul Mehta" class="reviewer-avatar">
-              <div class="reviewer-info">
-                <h3 class="reviewer-name">Rahul Mehta</h3>
-                <p class="reviewer-location">Dubai</p>
-              </div>
-            </div>
-            <div class="review-rating">
-              <span class="star-rating" aria-label="4 out of 5 stars">★★★★☆</span>
-            </div>
-            <p class="review-text">
->>>>>>> 39c6b97e18a4e0066067d92d5b1db7d37e893c76
               Dubai is a must-visit destination! The Burj Khalifa and desert
               safari were highlights of the trip. Just a bit expensive.
             </p>
           </div>
-<<<<<<< HEAD
           <div class="review-slide">
             <h4>Emily Johnson - London</h4>
             <p>⭐⭐⭐⭐⭐</p>
             <p>
-=======
-      
-          <div class="review-card">
-            <div class="review-header">
-              <img src="https://i.pravatar.cc/100?img=3" alt="Emily Johnson" class="reviewer-avatar">
-              <div class="reviewer-info">
-                <h3 class="reviewer-name">Emily Johnson</h3>
-                <p class="reviewer-location">London</p>
-              </div>
-            </div>
-            <div class="review-rating">
-              <span class="star-rating" aria-label="5 out of 5 stars">★★★★★</span>
-            </div>
-            <p class="review-text">
->>>>>>> 39c6b97e18a4e0066067d92d5b1db7d37e893c76
               London's history and architecture are stunning. The Tower of London
               and Buckingham Palace were fascinating to explore.
             </p>
           </div>
-<<<<<<< HEAD
           <div class="review-slide">
             <h4>Michael Lee - Goa</h4>
             <p>⭐⭐⭐⭐</p>
             <p>
-=======
-      
-          <div class="review-card">
-            <div class="review-header">
-              <img src="https://i.pravatar.cc/100?img=4" alt="Michael Lee" class="reviewer-avatar">
-              <div class="reviewer-info">
-                <h3 class="reviewer-name">Michael Lee</h3>
-                <p class="reviewer-location">Goa</p>
-              </div>
-            </div>
-            <div class="review-rating">
-              <span class="star-rating" aria-label="4 out of 5 stars">★★★★☆</span>
-            </div>
-            <p class="review-text">
->>>>>>> 39c6b97e18a4e0066067d92d5b1db7d37e893c76
               Goa's beaches are beautiful, and the nightlife is vibrant. Great
               place for a fun and laid-back vacation.
             </p>
           </div>
-<<<<<<< HEAD
           <div class="review-slide">
             <h4>Aditi Patel - New York</h4>
             <p>⭐⭐⭐⭐⭐</p>
             <p>
-=======
-      
-          <div class="review-card">
-            <div class="review-header">
-              <img src="https://i.pravatar.cc/100?img=5" alt="Aditi Patel" class="reviewer-avatar">
-              <div class="reviewer-info">
-                <h3 class="reviewer-name">Aditi Patel</h3>
-                <p class="reviewer-location">New York</p>
-              </div>
-            </div>
-            <div class="review-rating">
-              <span class="star-rating" aria-label="5 out of 5 stars">★★★★★</span>
-            </div>
-            <p class="review-text">
->>>>>>> 39c6b97e18a4e0066067d92d5b1db7d37e893c76
               New York City is amazing! Central Park, Times Square, and the Statue
               of Liberty were all incredible. Highly recommend!
             </p>
           </div>
         </div>
-<<<<<<< HEAD
-
-        <!-- Slideshow navigation -->
-        <div class="slideshow-nav">
-          <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-          <button class="next" onclick="changeSlide(1)">&#10095;</button>
-        </div>
-
-        <script>
-          let slideIndex = 0;
-          showSlides(slideIndex);
-
-          function changeSlide(n) {
-            showSlides(slideIndex += n);
-          }
-
-          function showSlides(n) {
-            let slides = document.getElementsByClassName("review-slide");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-          }
-        </script>
-
-        <style>
-          .review-slideshow {
-            position: relative;
-            max-width: 600px;
-            margin: auto;
-          }
-
-          .review-slide {
-            display: none;
-            text-align: center;
-          }
-
-          .slideshow-nav {
-            text-align: center;
-            margin-top: 10px;
-          }
-
-          .slideshow-nav button {
-            cursor: pointer;
-            padding: 10px;
-            margin: 0 5px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-          }
-        </style>
-=======
       </div>
     </section>
->>>>>>> 39c6b97e18a4e0066067d92d5b1db7d37e893c76
+
+    <!-- Slideshow navigation -->
+    <div class="slideshow-nav">
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+      let slideIndex = 0;
+      showSlides(slideIndex);
+
+      function changeSlide(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function showSlides(n) {
+        let slides = document.getElementsByClassName("review-slide");
+        if (n >= slides.length) { slideIndex = 0 }
+        if (n < 0) { slideIndex = slides.length - 1 }
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+      }
+    </script>
+
+    <style>
+      .review-slideshow {
+        position: relative;
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .review-slide {
+        display: none;
+        text-align: center;
+      }
+
+      .slideshow-nav {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .slideshow-nav button {
+        cursor: pointer;
+        padding: 10px;
+        margin: 0 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
 
     <a href="chatbot.html">
       <div class="fixed bottom-0 right-2 chatbot-container">
@@ -877,133 +790,153 @@ for(let i = 0; i < star.length; i++) {
         </button>
       </div>
     </a>
-
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-
-
-    <footer>
-      <div class="footer-wrapper">
-        <h5>BuddyTrail &copy;</h5>
-        <ul>
-          <li>
-            <a href="#" class="twitter" id="social-icons"
-              ><img src="icons/twitter.svg"
-            /></a>
-          </li>
-          <li>
-            <a href="#" class="instagram" id="social-icons"
-              ><img src="icons/instagram.svg"
-            /></a>
-          </li>
-          <li>
-            <a href="#" class="youtube" id="social-icons"
-              ><img src="icons/youtube.svg"
-            /></a>
-          </li>
-        </ul>
-      </div>
-    </footer>
     <!-- Deals and Offers Popup -->
-    <div id="dealsPopup" class="popup">
-      <div class="popup-content">
-        <span class="close-btn" id="closePopup">&times;</span>
-        <h2>Exclusive Deals and Offers!</h2>
-        <p>
-          Get the best deals on flights, hotels, and travel packages. Don't miss
-          out on our limited-time discounts. Plan your trip now!
-        </p>
-        <button
-          onclick="document.getElementById('dealsPopup').style.display = 'none'; window.location.href='#deals'"
-        >
-          Check Out Deals
-        </button>
-      </div>
-    </div>
-    <script>
-      // script.js
-      window.onscroll = function () {
-        toggleScrollTopButton();
-      };
-
-      const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-      function toggleScrollTopButton() {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollTopBtn.style.display = "block"; // Show button after scrolling down
-        } else {
-          scrollTopBtn.style.display = "none"; // Hide button when at the top
-        }
-      }
-
-      scrollTopBtn.onclick = function () {
-        window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
-      };
-    </script>
-    <!-- Add this at the end of the body, just before the closing </body> tag -->
-    <script>
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Submit the form data using fetch
-        fetch(this.action, {
-          method: 'POST',
-          body: new FormData(this),
-          headers: {
-            'Accept': 'application/json'
+        <!-- Deals and Offers Popup -->
+        <div id="dealsPopup" class="popup">
+          <div class="popup-content">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <h2>Exclusive Deals and Offers!</h2>
+            <p>
+              Get the best deals on flights, hotels, and travel packages. Don't miss
+              out on our limited-time discounts. Plan your trip now!
+            </p>
+            <button
+              onclick="document.getElementById('dealsPopup').style.display = 'none'; window.location.href='#deals'"
+            >
+              Check Out Deals
+            </button>
+          </div>
+        </div>
+        <script>
+          // script.js
+          window.onscroll = function () {
+            toggleScrollTopButton();
+          };
+    
+          const scrollTopBtn = document.getElementById("scrollTopBtn");
+    
+          function toggleScrollTopButton() {
+            if (
+              document.body.scrollTop > 100 ||
+              document.documentElement.scrollTop > 100
+            ) {
+              scrollTopBtn.style.display = "block"; // Show button after scrolling down
+            } else {
+              scrollTopBtn.style.display = "none"; // Hide button when at the top
+            }
           }
-        }).then(response => {
-          // Show the confirmation popup
-          document.getElementById('confirmationPopup').style.display = 'block';
-          // Reset the form
-          this.reset();
-        }).catch(error => {
-          console.error('Error:', error);
-          // Still show the confirmation popup even if there's an error
-          document.getElementById('confirmationPopup').style.display = 'block';
-        });
-      });
-
-      function closePopup() {
-        document.getElementById('confirmationPopup').style.display = 'none';
-      }
-    </script>
-    <style>
-      .popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-      }
-
-      .popup-content {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        text-align: center;
-      }
-
-      .popup-content h2 {
-        margin-top: 0;
-      }
-
-      .popup-content button {
-        margin-top: 10px;
-        padding: 5px 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-    </style>
-  </body>
+    
+          scrollTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+          };
+        </script>
+        <!-- Add this at the end of the body, just before the closing </body> tag -->
+        <script>
+          document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Submit the form data using fetch
+            fetch(this.action, {
+              method: 'POST',
+              body: new FormData(this),
+              headers: {
+                'Accept': 'application/json'
+              }
+            }).then(response => {
+              // Show the confirmation popup
+              document.getElementById('confirmationPopup').style.display = 'block';
+              // Reset the form
+              this.reset();
+            }).catch(error => {
+              console.error('Error:', error);
+              // Still show the confirmation popup even if there's an error
+              document.getElementById('confirmationPopup').style.display = 'block';
+            });
+          });
+    
+          function closePopup() {
+            document.getElementById('confirmationPopup').style.display = 'none';
+          }
+        </script>
+        <style>
+          .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+          }
+    
+          .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+          }
+    
+          .popup-content h2 {
+            margin-top: 0;
+          }
+    
+          .popup-content button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+          }
+        </style>
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="footer-col">
+                <h4>BuddyTrail</h4>
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Our Services</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Affiliate Program</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Shipping</a></li>
+                  <li><a href="#">Returns</a></li>
+                  <li><a href="#">Order Status</a></li>
+                  <li><a href="#">Payment Options</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Online Shop</h4>
+                <ul>
+                  <li><a href="#">Trail Maps</a></li>
+                  <li><a href="#">Gear</a></li>
+                  <li><a href="#">Apparel</a></li>
+                  <li><a href="#">Accessories</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                  <a href="https://www.facebook.com/BuddyTrail"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/BuddyTrail"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/BuddyTrail"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/company/BuddyTrail"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        
+      </body>
+    </html>
 </html>
