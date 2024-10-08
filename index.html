@@ -579,51 +579,101 @@
       <div class="reviews-list">
         <h3>What Others Are Saying</h3>
         <!-- Example Review -->
-        <div class="review">
-          <h4>John Doe - Paris</h4>
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>
-            Amazing experience in Paris! The Eiffel Tower was breathtaking, and
-            the food was incredible. Highly recommend!
-          </p>
-        </div>
-        <div class="review">
-          <h4>Rahul Mehta - Dubai</h4>
-          <p>⭐⭐⭐⭐</p>
-          <p>
-            Dubai is a must-visit destination! The Burj Khalifa and desert
-            safari were highlights of the trip. Just a bit expensive.
-          </p>
+        <div class="review-slideshow">
+          <div class="review-slide">
+            <h4>John Doe - Paris</h4>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>
+              Amazing experience in Paris! The Eiffel Tower was breathtaking, and
+              the food was incredible. Highly recommend!
+            </p>
+          </div>
+          <div class="review-slide">
+            <h4>Rahul Mehta - Dubai</h4>
+            <p>⭐⭐⭐⭐</p>
+            <p>
+              Dubai is a must-visit destination! The Burj Khalifa and desert
+              safari were highlights of the trip. Just a bit expensive.
+            </p>
+          </div>
+          <div class="review-slide">
+            <h4>Emily Johnson - London</h4>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>
+              London's history and architecture are stunning. The Tower of London
+              and Buckingham Palace were fascinating to explore.
+            </p>
+          </div>
+          <div class="review-slide">
+            <h4>Michael Lee - Goa</h4>
+            <p>⭐⭐⭐⭐</p>
+            <p>
+              Goa's beaches are beautiful, and the nightlife is vibrant. Great
+              place for a fun and laid-back vacation.
+            </p>
+          </div>
+          <div class="review-slide">
+            <h4>Aditi Patel - New York</h4>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>
+              New York City is amazing! Central Park, Times Square, and the Statue
+              of Liberty were all incredible. Highly recommend!
+            </p>
+          </div>
         </div>
 
-        <div class="review">
-          <h4>Emily Johnson - London</h4>
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>
-            London's history and architecture are stunning. The Tower of London
-            and Buckingham Palace were fascinating to explore.
-          </p>
+        <!-- Slideshow navigation -->
+        <div class="slideshow-nav">
+          <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+          <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
 
-        <div class="review">
-          <h4>Michael Lee - Goa</h4>
-          <p>⭐⭐⭐⭐</p>
-          <p>
-            Goa's beaches are beautiful, and the nightlife is vibrant. Great
-            place for a fun and laid-back vacation.
-          </p>
-        </div>
+        <script>
+          let slideIndex = 0;
+          showSlides(slideIndex);
 
-        <div class="review">
-          <h4>Aditi Patel - New York</h4>
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>
-            New York City is amazing! Central Park, Times Square, and the Statue
-            of Liberty were all incredible. Highly recommend!
-          </p>
-        </div>
-      </div>
-    </section>
+          function changeSlide(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function showSlides(n) {
+            let slides = document.getElementsByClassName("review-slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+          }
+        </script>
+
+        <style>
+          .review-slideshow {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+          }
+
+          .review-slide {
+            display: none;
+            text-align: center;
+          }
+
+          .slideshow-nav {
+            text-align: center;
+            margin-top: 10px;
+          }
+
+          .slideshow-nav button {
+            cursor: pointer;
+            padding: 10px;
+            margin: 0 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+          }
+        </style>
 
     <a href="chatbot.html">
       <div class="fixed bottom-0 right-2 chatbot-container">
