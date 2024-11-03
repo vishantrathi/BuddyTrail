@@ -132,4 +132,5 @@ body {
 
 .signin-link a:hover {
     text-decoration: underline; /* Add underline on hover for better UX */
+    color: #012e49;
 }
